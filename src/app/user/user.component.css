@@ -1,0 +1,21 @@
+/* 
+mat-row:nth-child(even){
+    background-color:dimgray;
+    }
+
+mat-row:nth-child(odd){
+    background-color:darkgray;
+    } */
+
+.highlight{
+        background: #42A948; /* green */
+    }
+
+    .mat-cell, .mat-header-cell {
+        flex: 1;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        color: #000;
+    }
+    

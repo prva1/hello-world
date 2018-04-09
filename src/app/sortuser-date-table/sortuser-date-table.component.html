@@ -1,0 +1,36 @@
+<div>
+    <mat-table #table [dataSource]="dataSource" matSort>
+    
+      <ng-container matColumnDef="name">
+         <mat-header-cell  *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+         <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> E-Mail </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{ user.email }} </mat-cell>
+       </ng-container>
+    
+       <ng-container matColumnDef="phone">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Phone </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{ user.phone }} </mat-cell>
+       </ng-container>
+    
+       <ng-container matColumnDef="company">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Company </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{ user.company.name }} </mat-cell>
+       </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{'highlight': selectedRowIndex == row.id}"
+    (click)="highlight(row)">></mat-row>
+    
+    </mat-table>
+
+  <mat-paginator #paginator
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+
+    </div>
